@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Ingredient;
 use App\Models\Pizza;
-
 use App\Models\Size;
 use Illuminate\Http\Request;
 
-class IngredientPizzaController extends Controller
+class SizeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +15,8 @@ class IngredientPizzaController extends Controller
      */
     public function index()
     {
-        $size = Size::all();
-        return view('pizza', ['pizzas'=>Pizza::all(), 'sizes'=>$size]);
+        return view('', ['size'=>Size::all()]);
+
     }
 
     /**

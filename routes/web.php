@@ -24,6 +24,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/menu', [IngredientPizzaController::class, 'index'])->Name('pizza');
+Route::get('/menu', [IngredientPizzaController::class, 'index'])->Name('ingredients');
 
 Route::group(['middleware'=>'auth'], function() {
     Route::get('/dashboard', function () {

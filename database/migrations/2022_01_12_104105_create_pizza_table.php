@@ -16,6 +16,11 @@ class CreatePizzaTable extends Migration
         Schema::create('pizza', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+//            $table->string('l25');
+//            $table->string('l30');
+//            $table->string('l35');
+
+
         });
     }
 
