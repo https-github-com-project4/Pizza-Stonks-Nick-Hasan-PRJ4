@@ -41,3 +41,7 @@ Route::group(['middleware'=>'auth'], function() {
     Route::resource('customer', CustomerController::class);
 });
 require __DIR__.'/auth.php';
+
+Route::get('/pizza/{id}/bewerken', [IngredientPizzaController::class, 'edit'])->Name ('ingredient-wijzig.edit');
+
+Route::put('/pizza/{id}', [IngredientPizzaController::class, 'update'])->Name ('ingredient-wijzig.update');

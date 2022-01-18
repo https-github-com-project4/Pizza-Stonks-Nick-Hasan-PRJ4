@@ -16,37 +16,37 @@ class IngredientsSeeder extends Seeder
     {
         Ingredient::create([
             'id' => '1',
-            'ingredient' => 'tomaatensaus',
+            'name' => 'tomaatensaus',
             'price'=> 1.00,
         ]);
         Ingredient::create([
             'id' => '2',
-            'ingredient' => 'kaas',
+            'name' => 'kaas',
             'price'=> 1.00,
         ]);
         Ingredient::create([
             'id' => '3',
-            'ingredient' => 'rode uien',
+            'name' => 'rode uien',
             'price'=> 0.50,
         ]);
         Ingredient::create([
             'id' => '4',
-            'ingredient' => 'paprika',
+            'name' => 'paprika',
             'price'=> 0.50,
         ]);
         Ingredient::create([
             'id' => '5',
-            'ingredient' => 'champigons',
+            'name' => 'champigons',
             'price'=> 0.75,
         ]);
         Ingredient::create([
             'id' => '6',
-            'ingredient' => 'kipfilet',
+            'name' => 'kipfilet',
             'price'=> 1.00,
         ]);
         Ingredient::create([
             'id' => '7',
-            'ingredient' => 'gehakt',
+            'name' => 'gehakt',
             'price'=> 1.50,
         ]);
     }

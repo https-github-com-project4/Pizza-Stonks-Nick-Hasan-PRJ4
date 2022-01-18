@@ -9,6 +9,7 @@ class Ingredient extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['name' ];
     /**
      * The table associated with the model.
      *
@@ -25,6 +26,6 @@ class Ingredient extends Model
     public $timestamps = false;
 
     public function pizzas(){
-        return $this->belongsToMany(Role::class, 'ingredient_pizza', 'pizza_id', 'ingredient_id');
+        return $this->belongsToMany(Pizza::class);
     }
 }

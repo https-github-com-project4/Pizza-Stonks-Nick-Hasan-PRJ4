@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Ingredient;
 use App\Models\Pizza;
 use Illuminate\Http\Request;
 
@@ -14,8 +15,8 @@ class IngredientPizzaController extends Controller
      */
     public function index()
     {
-
-        return view('pizza', ['pizzas'=>Pizza::all()]);
+        $pizzas = Pizza::all();
+        return view('pizza', ['pizzas'=>$pizzas]);
     }
 
     /**
@@ -56,9 +57,9 @@ class IngredientPizzaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($pizza_id)
     {
-        //
+        return view('wijzig', ['pizzas' => Pizza::find($pizza_id), 'ingredient'=>Ingredient::all()]);
     }
 
     /**
@@ -68,9 +69,11 @@ class IngredientPizzaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,  $ingredient_id )
     {
-        //
+        $ingredient = Ingredient::find($ingredient_id);
+        $ingredient->update($request->only(['name']));
+        return redirect()->route('pizza');
     }
 
     /**

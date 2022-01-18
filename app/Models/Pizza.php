@@ -24,6 +24,6 @@ class Pizza extends Model
     public $timestamps = false;
 
     public function ingredients(){
-        return $this->belongsToMany(Role::class, 'ingredient_pizza', 'ingredient_id', 'pizza_id');
+        return $this->belongsToMany(Ingredient::class);
     }
 }
