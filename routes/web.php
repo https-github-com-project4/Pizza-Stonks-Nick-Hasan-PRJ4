@@ -23,6 +23,11 @@ use \App\Http\Controllers\IngredientPizzaController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/about', function () {
+    return view('about');
+});
+
 Route::get('/menu', [IngredientPizzaController::class, 'index'])->Name('pizza');
 Route::get('/menu', [IngredientPizzaController::class, 'index'])->Name('ingredients');
 
