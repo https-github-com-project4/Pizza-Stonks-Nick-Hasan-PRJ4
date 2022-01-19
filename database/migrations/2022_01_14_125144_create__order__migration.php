@@ -14,18 +14,13 @@ class CreateOrderMigration extends Migration
     public function up()
     {
         Schema::create('order', function (Blueprint $table) {
-            $table->id();
-            $table->String('ing1');
-            $table->String('ing2');
-            $table->String('ing3');
-            $table->String('ing4');
-            $table->String('ing5');
-            $table->String('ing6');
-            $table->String('ing7');
+            $table->unsignedBigInteger('pizza_id');
+            $table->foreign('pizza_id')->references('id')->on('pizza');
+            $table->primary(['pizza_id']);
+
 
         });
     }
-
     /**
      * Reverse the migrations.
      *
