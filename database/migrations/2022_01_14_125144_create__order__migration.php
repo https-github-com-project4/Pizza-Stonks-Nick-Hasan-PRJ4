@@ -14,11 +14,13 @@ class CreateOrderMigration extends Migration
     public function up()
     {
         Schema::create('order', function (Blueprint $table) {
-            $table->unsignedBigInteger('pizza_id');
-            $table->foreign('pizza_id')->references('id')->on('pizza');
-            $table->primary(['pizza_id']);
-
-
+            $table->id();
+            $table->string('name');
+            $table->string('emailadres');
+            $table->integer('phone')->length(10);
+            $table->string('address');
+            $table->string('zipcode');
+            $table->timestamps();
         });
     }
     /**

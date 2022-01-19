@@ -2,20 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Ingredient;
-use App\Models\Pizza;
+use App\Models\Order;
 use Illuminate\Http\Request;
 
-class IngredientPizzaController extends Controller
+class OrderController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function index()
     {
-
+        return view('order');
     }
 
     /**
@@ -36,7 +35,8 @@ class IngredientPizzaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Order::create($request->except('_token'));
+        return Redirect()->route('pizzas.order',[]);
     }
 
     /**
@@ -56,9 +56,9 @@ class IngredientPizzaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($pizza_id)
+    public function edit($id)
     {
-        return view('wijzig', ['pizzas' => Pizza::find($pizza_id), 'ingredient'=>Ingredient::all()]);
+        //
     }
 
     /**
@@ -68,11 +68,9 @@ class IngredientPizzaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,  $ingredient_id )
+    public function update(Request $request, $id)
     {
-        $ingredient = Ingredient::find($ingredient_id);
-        $ingredient->update($request->only(['name']));
-        return redirect()->route('pizza');
+        //
     }
 
     /**

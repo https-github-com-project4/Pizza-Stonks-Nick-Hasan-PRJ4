@@ -14,13 +14,18 @@ class Order extends Model
      * @var string
      */
     protected $table = 'order';
+
     protected $fillable = [
-                            'ing1',
-                            'ing2',
-                            'ing3',
-                            'ing4',
-                            'ing5',
-                            'ing6',
-                            'ing7',
+        'name',
+        'emailadres',
+        'phone',
+        'address',
+        'zipcode',
     ];
+
+
+    public function pizzas(){
+        return $this->belongsToMany(Pizza::class);
+    }
+
 }
