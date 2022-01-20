@@ -14,7 +14,11 @@
     background-size: cover;
     /* Resize the background image to cover the entire container */
     inset: 90px;
+<<<<<<< HEAD
     visibility: hidden;
+=======
+visibility: hidden;
+>>>>>>> 6c5386b8e178b2392d3d0a1dce162e667c2e8c37
 
 }
 
@@ -153,6 +157,7 @@ center {
 .width300px {
     width: 100%;
 }
+<<<<<<< HEAD
 .container_contact{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -187,3 +192,5 @@ header{
     text-align: center;
     color: white;
 }
+=======
+>>>>>>> 6c5386b8e178b2392d3d0a1dce162e667c2e8c37

@@ -23,8 +23,21 @@ use \App\Http\Controllers\PizzaController;
 |
 */
 
+<<<<<<< HEAD
 
 
+=======
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/about', function () {
+    return view('about');
+});
+
+Route::get('/menu', [IngredientPizzaController::class, 'index'])->Name('pizza');
+Route::get('/menu', [IngredientPizzaController::class, 'index'])->Name('ingredients');
+>>>>>>> 6c5386b8e178b2392d3d0a1dce162e667c2e8c37
 
 Route::group(['middleware'=>'auth'], function() {
     Route::get('/dashboard', function () {
