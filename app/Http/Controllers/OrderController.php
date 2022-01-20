@@ -35,8 +35,8 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        Order::create($request->except('_token'));
-        return Redirect()->route('pizzas.order',[]);
+        $order = Order::create($request->except('_token'));
+        return redirect()->route('order.pizzas',['id'=> $order->id]);
     }
 
     /**
@@ -47,7 +47,7 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**

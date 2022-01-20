@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use App\Models\Pizza;
 use Illuminate\Http\Request;
 
@@ -24,9 +25,7 @@ class OrderPizzaController extends Controller
      */
     public function create()
     {
-      $pizzas =  Pizza::all();
-        return view('pizza', ['pizzas'=>$pizzas]);
-
+      //
     }
 
     /**
@@ -48,7 +47,7 @@ class OrderPizzaController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**

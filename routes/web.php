@@ -43,7 +43,7 @@ Route::group(['middleware'=>'auth'], function() {
 });
 require __DIR__.'/auth.php';
 
-Route::get('/menu', [PizzaController::class, 'index'])->Name('pizzas');
+Route::get('/pizzas', [PizzaController::class, 'index'])->Name('pizzas');
 
 Route::get('/pizza/{id}/bewerken', [IngredientPizzaController::class, 'edit'])->Name ('ingredient-wijzig.edit');
 Route::put('/pizza/{id}', [IngredientPizzaController::class, 'update'])->Name ('ingredient-wijzig.update');
@@ -51,12 +51,11 @@ Route::put('/pizza/{id}', [IngredientPizzaController::class, 'update'])->Name ('
 Route::get('/', [OrderController::class, 'index'])->Name('order.index');
 Route::post('/order',[OrderController::class ,'store'])->Name('order.store');
 
-Route::get('order/{id}/pizzas',[OrderPizzaController::class,'create'])->name('pizzas.order');
+Route::get('order/{id}/pizzas',[OrderPizzaController::class,''])->name('order.pizzas');
 
 Route::get('/about', function () {
     return view('about');
 });
-
 Route::get('/contact', function () {
     return view('contact');
 });

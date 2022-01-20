@@ -10,7 +10,7 @@
         <title>Stonks pizza's</title>
     </head>
     <body>
-
+        <h1>{{$id}} </h1>
 
         @foreach($pizzas as $pizza)<form action="">
                 <div class="grid-pizza">
